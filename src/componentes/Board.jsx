@@ -1,31 +1,10 @@
-import { useState } from 'react'
+
 import Sqare from './Sqare'
 
-const Board = () => {
-  const [square,setsquares] = useState(Array(9).fill(null));
-  const [isNext, setNext] = useState(false);
-
-  const handleSquareClick = (clickedPosition) =>{
-
-    if (square[clickedPosition]) {
-      return
-    }
-    setsquares((currentSquare) => {
-     return currentSquare.map((squareValue,position)=>{
-
-      if(clickedPosition === position) {
-        return isNext ?'x' : '0';
-      }
-
-      return squareValue
-
-     })
-    })
-    
-
-    setNext((currentIsNext) =>! currentIsNext)
-  }
-
+// eslint-disable-next-line react/prop-types
+const Board = ({square, handleSquareClick}) => {
+  
+  
   const renderSuare = ( position) =>{
     return (
       <Sqare 
