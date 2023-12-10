@@ -3,14 +3,18 @@ import Sqare from './Sqare'
 
 const Board = () => {
   const [square,setsquares] = useState(Array(9).fill(null));
+  const [isNext, setNext] = useState(false);
 
   const handleSquareClick = (clickedPosition) =>{
 
+    if (square[clickedPosition]) {
+      return
+    }
     setsquares((currentSquare) => {
      return currentSquare.map((squareValue,position)=>{
 
       if(clickedPosition === position) {
-        return 'x'
+        return isNext ?'x' : '0';
       }
 
       return squareValue
@@ -18,6 +22,8 @@ const Board = () => {
      })
     })
     
+
+    setNext((currentIsNext) =>! currentIsNext)
   }
 
   const renderSuare = ( position) =>{
