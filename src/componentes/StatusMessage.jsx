@@ -28,7 +28,7 @@ const StatusMessage = ({winner,gameBoard}) => {
     }
     if(!winner && !noMovesLeft){
         return <div>
-            Next player is {''}
+            Next player is {''} 
             <span className={isNext ? 'text-green' : 'text-orange'}>
             {nextPlayer}
             </span>

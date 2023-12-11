@@ -67,7 +67,7 @@ const [history,sethistroy] = useState(NEW_GAME)
     <>
      <div className='app'>
       <h1>
-        TIC <span className='text-green'>TAC</span> TOE
+        TIC <span className='text-green'>TAC</span> TOE 
       </h1>
       <StatusMessage winner={winner} gameBoard={gameBoard}/>
       <Board 
@@ -87,6 +87,10 @@ const [history,sethistroy] = useState(NEW_GAME)
       >
       Current Game History</h2>
       <History  history={history} moveTo={moveTo} currentMove={currentMove}/>
+      <h5 style={{
+        color:'#263238',
+        marginTop:'60px'
+      }}>@tarunbaliyan</h5>
      </div>
      <div className='bg-balls '></div>
     </>
