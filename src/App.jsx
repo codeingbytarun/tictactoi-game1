@@ -5,15 +5,17 @@ import Board from './componentes/Board'
 import History from './componentes/History';
 import StatusMessage from './componentes/StatusMessage';
 
+
+const NEW_GAME =[ { square: Array(9).fill(null),isNext:false}]
+
 function App() {
-  const [history,sethistroy] = useState([{square: Array(9).fill(null),isNext:false}])
+const [history,sethistroy] = useState(NEW_GAME)
+
  const [currentMove, setCurrentMove] = useState(0);
 
  const gameBoard = history[currentMove];
 
   const winner =  calculateWinner(gameBoard.square)
- 
-  console.log({history,currentMove})
 
   const handleSquareClick = (clickedPosition) =>{
 
