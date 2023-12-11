@@ -1,6 +1,6 @@
 $green: #12e177;
 $orange: #ffc72a;
-$blue: #4c43d4;
+$blue: #392ee090;
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -150,6 +150,7 @@ button {
     bottom: 0;
     min-width: 100%;
     z-index: -1;
+    filter: blur(5px);
 
     &:before,
     &:after {
