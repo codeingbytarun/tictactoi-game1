@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 
-const Sqare = ({value,onClick}) => {
+const Square = ({value,onClick}) => {
   
   return (
     <button type="button" className="square" onClick={onClick }>
@@ -12,4 +12,4 @@ const Sqare = ({value,onClick}) => {
   )
 }
 
-export default Sqare
+export default Square

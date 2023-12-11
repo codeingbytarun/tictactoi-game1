@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 
-const StatusMessage = ({winner,isNext,square}) => {
+const StatusMessage = ({winner,gameBoard}) => {
+    const {square,isNext} = gameBoard;
+    
+
     const noMovesLeft =  square.every(squareValue => squareValue !==null );
      const nextPlayer = isNext ? 'X' : '0';
    
@@ -10,13 +13,18 @@ const StatusMessage = ({winner,isNext,square}) => {
         return (
         <div>
             Winner is {''}
-            <span className={winner === 'X' ? 'text-green' : 'text-orange'}></span>
+            <span className={winner === 'X' ? 'text-green' : 'text-orange'}>
             {winner}
+            </span>
         </div>)
     }
     if(!winner && noMovesLeft){
-        return <div><span className="text-orange">0</span> and {''} 
-        <span className="text-green">X</span> tied</div>
+        return (
+        <div>
+            <span className="text-orange">0</span> and {''} 
+            <span className="text-green">X</span> tied
+            </div>
+            )
     }
     if(!winner && !noMovesLeft){
         return <div>
